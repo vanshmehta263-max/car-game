@@ -1,0 +1,262 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #101820;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.game {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+
+h1 span {
+  color: #f5b942;
+}
+
+.topbar p {
+  color: #9ba8b5;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.stats {
+  display: flex;
+  gap: 24px;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+}
+
+.stats small,
+.damage span {
+  color: #9ba8b5;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.stats strong {
+  font-size: 17px;
+}
+
+.game-area {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #394956;
+  border-radius: 14px;
+  background: #4c5a4d;
+  box-shadow: 0 15px 45px #0008;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+}
+
+.message {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  background: #07111bd9;
+}
+
+.message h2 {
+  color: #f5b942;
+  font-size: clamp(23px, 5vw, 38px);
+  letter-spacing: 2px;
+}
+
+.message p {
+  margin: 12px 0 22px;
+  color: #d3dce3;
+}
+
+button {
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: bold;
+  touch-action: none;
+  user-select: none;
+}
+
+#startBtn {
+  background: #f5b942;
+  color: #17202a;
+  padding: 14px 28px;
+  font-size: 14px;
+}
+
+#startBtn:hover {
+  background: #ffd36e;
+}
+
+.hud {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  pointer-events: none;
+}
+
+.gear {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #111c26dd;
+  border: 1px solid #ffffff55;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.damage {
+  background: #111c26dd;
+  padding: 9px;
+  border-radius: 7px;
+  width: 125px;
+}
+
+.health-track {
+  height: 6px;
+  background: #56616a;
+  border-radius: 10px;
+  margin-top: 7px;
+  overflow: hidden;
+}
+
+#healthBar {
+  height: 100%;
+  width: 100%;
+  background: #5bd68b;
+  transition: width .2s;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 5px;
+}
+
+.keyboard-help {
+  color: #aebbc5;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.keyboard-help strong {
+  color: white;
+  letter-spacing: 1px;
+}
+
+.mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.steering,
+.pedals {
+  display: flex;
+  gap: 9px;
+}
+
+.mobile-controls button {
+  min-width: 58px;
+  height: 55px;
+  color: white;
+  background: #344653;
+  font-size: 19px;
+  border: 1px solid #70818d;
+}
+
+.mobile-controls button:active {
+  transform: scale(.94);
+  filter: brightness(1.4);
+}
+
+.mobile-controls .gas {
+  background: #168b55;
+  font-size: 12px;
+}
+
+.mobile-controls .brake {
+  background: #b83c3c;
+  font-size: 12px;
+}
+
+@media (max-width: 650px) {
+  body {
+    padding: 9px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 19px;
+  }
+
+  .stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mobile-controls {
+    justify-content: space-between;
+  }
+
+  .mobile-controls button {
+    min-width: 54px;
+    height: 52px;
+  }
+
+  .keyboard-help {
+    font-size: 11px;
+  }
+}
